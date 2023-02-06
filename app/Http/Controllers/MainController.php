@@ -16,4 +16,9 @@ class MainController extends Controller
 
         return view('pages.home', compact('people'));
     }
+
+    public function personShow(Person $person) {
+
+        return view('pages.personShow', compact('person'));
+    }
 }
