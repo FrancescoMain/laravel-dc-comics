@@ -9,6 +9,7 @@
             <a href="{{ route('person.show', $person) }}">
                     {{ $person -> fristName }}
             </a>
+            <a href="{{ route('person.delete', $person) }}">X</a>
             </li>
             
         @endforeach
