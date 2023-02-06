@@ -54,4 +54,28 @@ class MainController extends Controller
     
         return redirect() -> route('home');
     }
+    public function personEdit(Person $person) {
+
+        return view('pages.personEdit', compact('person'));
+    }
+
+    public function personUpdate(Request $request, Person $person) {
+
+        $data = $request -> validate([
+            'fristName' => 'required|string|max:32',
+            'lastName' => 'required|string|max:32',
+            'dateOfBirth' => 'date',
+            'heigth' => 'nullable|integer|min:150|max:220',
+        ]);
+    
+
+        $person -> fristName = $data['fristName'];
+        $person -> lastName = $data['lastName'];
+        $person -> dateOfBirth = $data['dateOfBirth'];
+        $person -> heigth = $data['heigth'];
+    
+        $person -> save();
+    
+        return redirect() -> route('home');
+    }
 }
