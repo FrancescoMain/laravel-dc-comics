@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('people', function (Blueprint $table) {
             $table->id();
 
-            $table->string("fristName", 32);
-            $table->string("lastName", 32);
-            $table->date("dateOfBirth");
-            $table->integer("heigth", 32) -> unsigned() -> nullable ();
+            $table->string('fristName', 32);
+            $table->string('lastName', 32);
+            $table->date('dateOfBirth');
+            $table->integer('heigth') -> unsigned() -> nullable();
             
             $table->timestamps();
         });
