@@ -5,7 +5,12 @@
     <h1>People</h1>
     <ul>
         @foreach ($people as $person)
-            <li>{{ $person -> fristName }}</li>
+            <li>
+            <a href="{{ route('person.show', $person) }}">
+                    {{ $person -> fristName }}
+            </a>
+            </li>
+            
         @endforeach
     </ul>
 
