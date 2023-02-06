@@ -7,10 +7,13 @@
     <ul>
         @foreach ($people as $person)
             <li>
-            <a href="{{ route('person.show', $person) }}">
-                    {{ $person -> fristName }}
-            </a>
-            <a href="{{ route('person.delete', $person) }}">X</a>
+                <a href="{{ route('person.show', $person) }}">
+                        {{ $person -> fristName }}
+                </a>
+                <a href="{{ route('person.delete', $person) }}">X</a>
+                <a href="{{ route('person.edit', $person) }}">
+                    EDIT
+                </a>
             </li>
             
         @endforeach
